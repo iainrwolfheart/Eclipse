@@ -1,0 +1,39 @@
+package Nationwide.First;
+
+import java.awt.Button;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class OHandler implements ActionListener{
+	TextField T1;
+	int first;
+	int second;
+	String opt;
+	String eq;
+	
+	public OHandler (TextField A) {
+		T1=A;
+	}
+	
+	public void actionPerformed(ActionEvent d) {
+		Button btn=(Button) d.getSource();
+		opt=btn.getLabel();
+		
+		if (opt.equals("c")){
+			T1.setText("");
+		}
+		else {
+			first=Integer.parseInt(T1.getText());	
+			eq=opt;
+			T1.setText("");
+		}
+		if (opt.equals("=")){
+			second=Integer.parseInt(T1.getText());
+			if(eq.equals("+")){
+				T1.setText(Integer.toString(first+second));
+				System.out.println(first+second);
+			}
+		}
+	}
+}

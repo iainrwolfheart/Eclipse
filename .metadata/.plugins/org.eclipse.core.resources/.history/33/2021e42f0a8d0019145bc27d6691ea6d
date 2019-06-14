@@ -1,0 +1,13 @@
+package tdd2;
+
+public class Test2 {
+	
+	public void test() {
+		int x=5;
+		int y=4;
+		int z=x+y;
+		
+		
+	}
+
+}

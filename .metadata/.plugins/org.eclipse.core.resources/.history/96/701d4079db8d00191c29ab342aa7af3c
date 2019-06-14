@@ -1,0 +1,22 @@
+package TestLink;
+
+import java.sql.*;
+
+public class TestLink {
+
+	public static void main(String[] args) {
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/mule","root","Las1Vegas!","PracticeTapes");
+		Statement stat = conn.createStatement();
+		stat.executeUpdate("insert into ptusers values(Iain, Gorrie, carousel94@hotmail.com, irwolfheart, na, myself");
+		resultset = rs.close();
+		stat.close();
+	}
+	catch(Exception se) {
+		System.out.println(se.toString());
+	}
+	}
+
+}

@@ -1,0 +1,78 @@
+package Nationwide.First;
+
+import java.awt.*;
+
+public class WindowsXP {
+
+	public static void main(String[] args) {
+		
+		Frame f = new Frame("Calculator");
+		Panel screen = new Panel();
+		Panel keypad = new Panel();
+		
+	    TextField T1 = new TextField(20);
+	    Ehandler eh = new Ehandler(T1);
+	    OHandler oh = new OHandler(T1);
+	     
+	    Button b0 = new Button("0");
+	    Button b1 = new Button("1");
+        Button b2 = new Button("2");
+        Button b3 = new Button("3");
+        Button b4 = new Button("4");
+        Button b5 = new Button("5");
+        Button b6 = new Button("6");
+        Button b7 = new Button("7");
+        Button b8 = new Button("8");
+        Button b9 = new Button("9");
+        Button badd = new Button("+");
+        Button bsub = new Button("-");
+        Button bmul = new Button("x");
+        Button bdiv = new Button("/");
+        Button beq = new Button("=");
+        Button bc = new Button("c");
+	    
+        GridLayout G = new GridLayout(4,4);
+        keypad.setLayout(G);
+        
+        screen.add(T);
+        keypad.add(b0);
+        keypad.add(b1);
+        keypad.add(b2);
+        keypad.add(b3);
+        keypad.add(b4);
+        keypad.add(b5);
+        keypad.add(b6);
+        keypad.add(b7);
+        keypad.add(b8);
+        keypad.add(b9);
+        keypad.add(badd);
+        keypad.add(bsub);
+        keypad.add(bmul);
+        keypad.add(bdiv);
+        keypad.add(beq);
+        keypad.add(bc);
+        
+        f.add(screen, BorderLayout.NORTH);
+        f.add(keypad, BorderLayout.CENTER);
+        
+      	b0.addActionListener(eh);
+      	b1.addActionListener(eh);
+        b2.addActionListener(eh);
+        b3.addActionListener(eh);
+        b4.addActionListener(eh);
+        b5.addActionListener(eh);
+        b6.addActionListener(eh);
+        b7.addActionListener(eh);
+        b8.addActionListener(eh);
+        b9.addActionListener(eh);
+        badd.addActionListener(oh);
+        bsub.addActionListener(oh);
+        bmul.addActionListener(oh);
+        bdiv.addActionListener(oh);
+        beq.addActionListener(oh);
+        bc.addActionListener(oh);
+	        
+        f.setSize(300,400);
+        f.setVisible(true);
+	}
+}

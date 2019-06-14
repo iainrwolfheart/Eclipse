@@ -1,0 +1,20 @@
+package TestLink;
+
+import java.util.Scanner;
+
+public class ScannerTest1 {
+
+	public static void main(String[] args) {
+	
+		Scanner in =new Scanner(System.in);
+		System.out.println("How much is a Fanta? £");
+		float price=in.nextFloat();
+		
+		System.out.println("How many did you buy? ");
+		int qty=in.nextInt();
+		System.out.println("Your total comes to £"+(qty*price));
+		
+
+	}
+
+}

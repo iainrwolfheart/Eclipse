@@ -1,0 +1,81 @@
+package Nationwide.First;
+
+import java.awt.*;
+
+public class WindowsXP {
+
+	public static void main(String[] args) {
+		
+		Frame f = new Frame("Calculator");
+		Panel screen = new Panel();
+		Panel keypad = new Panel();
+	    TextField T = new TextField(10);
+	     
+	    Button b0 = new Button("0");
+	    Button b1 = new Button("1");
+        Button b2 = new Button("2");
+        Button b3 = new Button("3");
+        Button b4 = new Button("4");
+        Button b5 = new Button("5");
+        Button b6 = new Button("6");
+        Button b7 = new Button("7");
+        Button b8 = new Button("8");
+        Button b9 = new Button("9");
+        Button badd = new Button("+");
+        Button bsub = new Button("-");
+        Button bmul = new Button("x");
+        Button bdiv = new Button("/");
+        Button beq = new Button("=");
+        Button bc = new Button("c");
+	    
+        GridLayout G = new GridLayout(4,4);
+        keypad.setLayout(G);
+        
+        screen.add(T);
+        keypad.add(b0);
+        keypad.add(b1);
+        keypad.add(b2);
+        keypad.add(b3);
+        keypad.add(b4);
+        keypad.add(b5);
+        keypad.add(b6);
+        keypad.add(b7);
+        keypad.add(b8);
+        keypad.add(b9);
+        keypad.add(badd);
+        keypad.add(bsub);
+        keypad.add(bmul);
+        keypad.add(bdiv);
+        keypad.add(beq);
+        keypad.add(bc);
+        
+        f.add(screen, BorderLayout.NORTH);
+        f.add(keypad, BorderLayout.CENTER);
+        
+	    //T = new TextField(10);
+
+        Ehandler d = new Ehandler(T);
+	        //Esub e = new Esub(t1, t2, t3);
+	        //Emult g = new Emult(t1, t2, t3);
+	        //Ediv h = new Ediv(t1, t2, t3);
+      	b0.addActionListener(d);
+      	b1.addActionListener(d);
+        b2.addActionListener(d);
+        b3.addActionListener(d);
+        b4.addActionListener(d);
+        b5.addActionListener(d);
+        b6.addActionListener(d);
+        b7.addActionListener(d);
+        b8.addActionListener(d);
+        b9.addActionListener(d);
+        badd.addActionListener(d);
+        bsub.addActionListener(d);
+        bmul.addActionListener(d);
+        bdiv.addActionListener(d);
+        beq.addActionListener(d);
+        bc.addActionListener(d);
+	        
+        f.setSize(300,400);
+        f.setVisible(true);
+	}
+}

@@ -1,0 +1,34 @@
+package Nationwide.First;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Ehandler implements ActionListener{
+	 TextField No1, No2, Result;
+
+	    public Ehandler(TextField A, TextField B, TextField C){
+	        No1=A;
+	        No2=B;
+	        Result=C;
+	    }
+	    public void actionPerformed (ActionEvent d){
+	        int a, b, c;
+	        a=Integer.parseInt(No1.getText());
+	        b=Integer.parseInt(No2.getText());
+	        Button btn=(Button)d.getSource();
+	        String ch=btn.getLabel();
+	        
+	        if(ch.contentEquals("+")) {
+	        c=a+b;
+	    }
+	        if(ch.contentEquals("-")) {
+		        c=a-b;
+		    }
+	        if(ch.contentEquals("*")) {
+		        c=a*b;
+		    }
+	        if(ch.contentEquals("/")) {
+		        c=a/b;
+		    }
+	        Result.setText(Integer.toString(c));
+}

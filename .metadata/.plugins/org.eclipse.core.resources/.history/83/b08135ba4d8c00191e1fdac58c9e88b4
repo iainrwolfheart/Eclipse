@@ -1,0 +1,14 @@
+package addOrSub;
+
+import java.awt.GridLayout;
+
+public class addOrSub {
+
+	public static void main(String[] args) {
+	
+		Frame f = new Frame();
+		GridLayout G = new GridLayout(2,6);
+        f.setLayout(G);
+	}
+
+}

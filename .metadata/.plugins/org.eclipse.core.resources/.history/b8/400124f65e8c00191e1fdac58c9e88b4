@@ -1,0 +1,18 @@
+package tdd2;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Test2 {
+
+	public void test() {
+		int x=5;
+		int y=3;
+		int z=x+y;
+		
+		assertEquals(10,z);
+		fail("Not yet implemented");
+	}
+
+}
