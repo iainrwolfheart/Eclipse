@@ -1,5 +1,7 @@
 package Nationwide.TestTestTest;
 
+import java.util.Arrays;
+
 public class OfflineExercises {
 
 	// Given a string, return a string where
@@ -15,17 +17,14 @@ public class OfflineExercises {
 		String dblup="";
 		int i=0;
 		while (i<input.length()) {
-			if(input.substring(i,i+1).equals(dblup)) {
+				dblup+=(input.substring(i,i+1));
 				ret+=dblup;
 				ret+=input.substring(i,i+1);
 				dblup="";
 			}
-			else {
-				dblup+=input.substring(i,i+1);
-			}
 		i++;
 		return ret;
-	}}
+	}
 	//
 	// A sandwich is two pieces of bread with something in between. Return the
 	// string that is between the first and last appearance of "bread" in the
@@ -42,11 +41,18 @@ public class OfflineExercises {
 		int i=0;
 		while (i<input.length()) {
 			if (input.substring(i,i+leave.length())==leave);
-				i+leave.length();
+				i+=((leave.length())-1);
+				if (input.substring(i,i+leave.length())==leave){
+					filling="";
+				}
+				else {
+					while ((input.substring(i,i+leave.length())!=leave)) {
+						filling+=input.substring(i);
+					}
+				}
+			i++;
 		}
-		
-		
-		return "";
+		return filling;
 	}
 
 	// Given three ints, a b c, one of them is small, one is medium and one is
@@ -59,8 +65,18 @@ public class OfflineExercises {
 	// evenlySpaced(4, 6, 3) → false
 
 	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
-	}
+		int A = a;
+		int B = b;
+		int C = c;
+		
+		int[] EvenFlow = {A,B,C};
+		Arrays.sort(EvenFlow);
+		if ((EvenFlow[1])-(EvenFlow[0])==(EvenFlow[2])-(EvenFlow[1])) {
+			return true;
+		}
+		else {
+			return false;
+	}}
 
 	// Given a string and an int n, return a string made of the first and last n
 	// chars from the string. The string length will be at least n.
@@ -70,7 +86,26 @@ public class OfflineExercises {
 	// nTwice("Chocolate", 1) → "Ce"
 
 	public String nTwice(String input, int a) {
-		return "";
+		int n = a;
+		int i = 0;
+		String FL = "";
+		
+		if (n==3){
+			FL+=input.substring(i,i+3);
+			i=input.length();
+			FL+=input.substring(i-3,i);
+		}
+		else if (n==2){
+			FL+=input.substring(i,i+2);
+			i=input.length();
+			FL+=input.substring(i-2,i);
+		}
+		else if (n==1){
+			FL+=input.substring(i,i+1);
+			i=input.length();
+			FL+=input.substring(i-1,i);
+		}
+		return FL;
 	}
 
 	// Given a string, return true if it ends in "ly".
@@ -80,7 +115,13 @@ public class OfflineExercises {
 	// endsLy("oddy") → false
 
 	public boolean endsly(String input) {
-		return false;
+		int i = input.length()-1;
+		if (input.substring(i-2,i).equals("ly")){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	// Given a string, return recursively a "cleaned" string where adjacent
@@ -92,13 +133,15 @@ public class OfflineExercises {
 	// stringClean("Hello") → "Helo"
 	public String stringClean(String input) {
 		String output="";
+		String leave="";
 		int i=0;
-		for (i=0; i<(input.length());) {
-			if (input.substring(i,i+1)).equals(input.substring(i,i-1)) {
-				i++;
+		int l=output.length();
+		while(i<input.length()) {
+			if (input.substring(i)==output.substring(l)) {
+				leave+=input.substring(i);
 			}
 			else {
-				output+=input.substring(i,i+1);
+				output+=input.substring(i);
 			}
 		i++;
 		}
